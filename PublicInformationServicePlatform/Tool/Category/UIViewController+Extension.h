@@ -23,4 +23,7 @@ typedef void(^AlertActionHandler)(UIAlertAction *action);
 
 - (void)authenticateUserLoginWithBlock:(void(^)(void))block;
 
+
+- (CGFloat)topBarHeight;
+
 @end

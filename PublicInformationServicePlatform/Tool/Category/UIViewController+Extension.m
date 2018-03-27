@@ -68,4 +68,9 @@
     }
 }
 
+- (CGFloat)topBarHeight
+{
+    return StatusBarHeight + self.navigationController.navigationBar.bounds.size.height;
+}
+
 @end

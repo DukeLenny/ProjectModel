@@ -60,9 +60,11 @@ _Pragma("clang diagnostic pop") \
 #define SandBoxDocumentsPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
 #define SandBoxCachesPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
-#define APP [UIApplication sharedApplication]
-#define APPDELEGATE ((AppDelegate *)[APP delegate])
+#define APPLICATION [UIApplication sharedApplication]
+#define APPDELEGATE ((AppDelegate *)[APPLICATION delegate])
 #define WINDOW [APPDELEGATE window]
+
+#define StatusBarHeight (APPLICATION.statusBarFrame.size.height)
 
 #define UserDefaults [NSUserDefaults standardUserDefaults]
 
