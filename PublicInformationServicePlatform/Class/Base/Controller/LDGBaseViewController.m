@@ -20,6 +20,7 @@
     return NO;
 }
 
+//当self.navigationController != nil && [self.navigationController isKindOfClass:[UINavigationController class]] && self.navigationController.navigationBarHidden = NO,这个方法不会调用
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return PreferredStatusBarStyle;
