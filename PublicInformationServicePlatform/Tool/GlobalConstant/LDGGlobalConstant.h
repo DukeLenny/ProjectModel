@@ -23,4 +23,6 @@ static const CGFloat NavigationBarTitleFontSize = (18.0);
 
 static NSString *BaseURLString = @"";
 
+static const UIStatusBarStyle PreferredStatusBarStyle = UIStatusBarStyleDefault;
+
 #endif /* LDGGlobalConstant_h */

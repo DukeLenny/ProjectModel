@@ -22,7 +22,7 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleDefault;
+    return PreferredStatusBarStyle;
 }
 
 #pragma mark - Rotation
