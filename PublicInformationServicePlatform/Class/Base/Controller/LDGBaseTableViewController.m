@@ -17,7 +17,7 @@
 #pragma mark - StatusBar
 - (BOOL)prefersStatusBarHidden
 {
-    return NO;
+    return PrefersStatusBarHidden;
 }
 
 //当self.navigationController != nil && [self.navigationController isKindOfClass:[UINavigationController class]] && self.navigationController.navigationBarHidden = NO,这个方法不会调用
@@ -51,7 +51,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
 //    self.automaticallyAdjustsScrollViewInsets = NO;
     AutomaticallyAdjustsScrollViewInsets_NO(self.tableView, self);

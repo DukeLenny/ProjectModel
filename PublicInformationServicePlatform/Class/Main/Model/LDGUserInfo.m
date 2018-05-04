@@ -10,10 +10,10 @@
 
 @implementation LDGUserInfo
 
-+ (NSDictionary *)mj_replacedKeyFromPropertyName
-{
-    return @{@"ID" : @"id"};
-}
+//+ (NSDictionary *)mj_replacedKeyFromPropertyName
+//{
+//    return @{@"ID" : @"id"};
+//}
 
 + (LDGUserInfo *)sharedUserInfo
 {

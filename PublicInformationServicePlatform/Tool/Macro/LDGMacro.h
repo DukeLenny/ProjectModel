@@ -68,13 +68,13 @@ _Pragma("clang diagnostic pop") \
 
 #define UserDefaults [NSUserDefaults standardUserDefaults]
 
-#define NavigationBarBarTintColor UIColorFromRGB(0xB70A07)
+#define NavigationBarBarTintColor UIColorFromRGB(0x0097F7)
 #define NavigationBarTintColor [UIColor whiteColor]
-#define TabBarTintColor NavigationBarBarTintColor
+#define TabBarTintColor UIColorFromRGB(0x12a2fe)
 #define NavigationBarTitleForegroundColor NavigationBarTintColor
 
 #define USER_INFO [LDGUserInfo sharedUserInfo]
-#define USER_ID (USER_INFO.ID)
+#define USER_ID (USER_INFO.openid)
 
 #define SeparatorColor UIColorFromRGB(0xE0E0E0)
 #define ViewBackgroundColor UIColorFromRGB(0xF5F6F7)
@@ -82,6 +82,17 @@ _Pragma("clang diagnostic pop") \
 
 #define TimeStamp [NSString timeStamp]
 
+#define MenuItem [YANMenuItem appearance]
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define DetailHtmlCode(code) [NSString stringWithFormat:@"detail.html?code=%@",code]
+
+#define JKBUserName (USER_ID?:@"")
+#define JKBSign [NSString md532BitLowerByAStr:[NSString stringWithFormat:@"gds=%@%@",JKBAppKey,JKBUserName]]
+#define JKBDefaultParameters [NSString stringWithFormat:@"&appkey=%@&username=%@&sign=%@",JKBAppKey,JKBUserName,JKBSign]
+#define JKBUserCenterURLString [NSString stringWithFormat:@"%@userCenter.jhtml?%@",JKBBaseURLString,JKBDefaultParameters]
+#define JKBReservationURLString(wid) [NSString stringWithFormat:@"%@index.jhtml?wid=%@&memberId=%@&source=%@%@",JKBBaseURLString,wid,JKBMemberId,JKBSource,JKBDefaultParameters]
+
 
 #endif /* LDGMacro_h */

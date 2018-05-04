@@ -31,6 +31,7 @@
 #import "JKRefreshHeader.h"
 #import "JKRefreshAutoFooter.h"
 #import "LDGRefreshTableViewController.h"
+#import "LDGWebViewController.h"
 #import "AppDelegate.h"
 
 #endif /* PrefixHeader_pch */

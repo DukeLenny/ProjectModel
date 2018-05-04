@@ -23,11 +23,11 @@
 + (void)initialize
 {
     UINavigationBar *bar = [UINavigationBar appearance];
-    bar.translucent = NO;
+//    bar.translucent = NO;
     bar.tintColor = NavigationBarTintColor;
-    bar.backIndicatorImage = [UIImage imageNamed:NavigationBarBackIndicatorImageName];
-    bar.backIndicatorTransitionMaskImage = [UIImage imageNamed:NavigationBarBackIndicatorImageName];
-    bar.shadowImage = UIImage.new;
+//    bar.backIndicatorImage = [UIImage imageNamed:NavigationBarBackIndicatorImageName];
+//    bar.backIndicatorTransitionMaskImage = [UIImage imageNamed:NavigationBarBackIndicatorImageName];
+//    bar.shadowImage = UIImage.new;
     //    [bar setBackgroundImage:[UIImage imageNamed:NavigationBarBackgroundImageName] forBarMetrics:UIBarMetricsDefault];
     bar.barTintColor = NavigationBarBarTintColor;
     [bar setTitleTextAttributes:@{
@@ -42,15 +42,15 @@
     // Do any additional setup after loading the view.
     
     // 禁止使用系统自带的滑动手势
-    self.interactivePopGestureRecognizer.enabled = NO;
+//    self.interactivePopGestureRecognizer.enabled = NO;
     // 获取系统自带滑动手势的target对象
-    id target = self.interactivePopGestureRecognizer.delegate;
+//    id target = self.interactivePopGestureRecognizer.delegate;
     // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
     // 设置手势代理，拦截手势触发
-    pan.delegate = self;
+//    pan.delegate = self;
     // 给导航控制器的view添加全屏滑动手势
-    [self.view addGestureRecognizer:pan];
+//    [self.view addGestureRecognizer:pan];
     
     // 代理
     self.delegate = self;

@@ -152,6 +152,16 @@ typedef void(^NetworkStatus)(LDGNetworkStatus status);
                                      success:(HttpRequestSuccess)success
                                      failure:(HttpRequestFailed)failure;
 
++ (NSURLSessionTask *)uploadFileWithURL:(NSString *)URL
+                             parameters:(NSDictionary *)parameters
+                              fileDatas:(NSArray<NSData *> *)fileDatas
+                                   name:(NSString *)name
+                               fileName:(NSString *)fileName
+                               mimeType:(NSString *)mimeType
+                               progress:(HttpProgress)progress
+                                success:(HttpRequestSuccess)success
+                                failure:(HttpRequestFailed)failure;
+
 /**
  *  下载文件
  *

@@ -8,7 +8,12 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "LDGTabBarController.h"
+#import "LDGNavigationController.h"
+
+#import "WXApiManager.h"
+
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -18,10 +23,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self setStatusBar];
+    
     [self setSharedURLCache];
     [self setSDWebImage];
     [self setHUDConfiguration];
     [self setNetworkStatus];
+    
+    [self setWXApi];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -64,6 +73,21 @@
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+}
+
 #pragma mark - OtherMethods
 - (void)setHUDConfiguration
 {
@@ -97,7 +121,65 @@
 
 - (void)setWindowRootViewController
 {
+    LDGTabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+    [tabBarController addChildViewController:[self mineNavigationController]];
+    tabBarController.delegate = self;
+    self.window.rootViewController = tabBarController;
+}
+
+- (LDGNavigationController *)mineNavigationController
+{
+    LDGWebViewController *mineWebViewController = [[LDGWebViewController alloc] initWithAddress:[JKBUserCenterURLString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+    mineWebViewController.showsToolBar = NO;
+    if (AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE()) {
+        mineWebViewController.webView.allowsLinkPreview = YES;
+    }
+    LDGNavigationController *mineNavigationController = [[LDGNavigationController alloc] initWithRootViewController:mineWebViewController];
+    mineNavigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_personal_selected"];
+    mineNavigationController.tabBarItem.title = @"我的";
+    mineNavigationController.tabBarItem.image = [UIImage imageNamed:@"tab_personal_normal"];
+    mineNavigationController.tabBarItem.tag = 3;
+    return mineNavigationController;
+}
+
+- (void)setStatusBar
+{
+    APPLICATION.statusBarStyle = PreferredStatusBarStyle;
+    APPLICATION.statusBarHidden = PrefersStatusBarHidden;
+}
+
+- (void)setWXApi
+{
+    [WXApi startLogByLevel:WXLogLevelNormal logBlock:^(NSString *log) {
+        MMLog(@"log : %@", log);
+    }];
     
+    //向微信注册
+    [WXApi registerApp:WXAppID enableMTA:YES];
+    
+    //向微信注册支持的文件类型
+    UInt64 typeFlag = MMAPP_SUPPORT_TEXT | MMAPP_SUPPORT_PICTURE | MMAPP_SUPPORT_LOCATION | MMAPP_SUPPORT_VIDEO |MMAPP_SUPPORT_AUDIO | MMAPP_SUPPORT_WEBPAGE | MMAPP_SUPPORT_DOC | MMAPP_SUPPORT_DOCX | MMAPP_SUPPORT_PPT | MMAPP_SUPPORT_PPTX | MMAPP_SUPPORT_XLS | MMAPP_SUPPORT_XLSX | MMAPP_SUPPORT_PDF;
+    
+    [WXApi registerAppSupportContentFlag:typeFlag];
+}
+
+#pragma mark - UITabBarControllerDelegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    if ([viewController.tabBarItem.title isEqualToString:@"我的"])
+    {
+        //点击"我的"
+        if (USER_ID)
+        {
+            return YES;
+        }
+        else
+        {
+            [tabBarController presentLoginViewController];
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

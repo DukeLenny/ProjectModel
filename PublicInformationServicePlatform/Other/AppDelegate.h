@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class LDGTabBarController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)setWindowRootViewController;
+
+@property (nonatomic, strong) LDGTabBarController *tabBarController;
 
 @end
 

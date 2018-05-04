@@ -16,6 +16,8 @@
 
 #import "LDGNetworkCache.h"
 
+#import "AXWebViewController.h"
+
 @implementation LDGUtility
 
 + (PHFetchResult<PHAsset *> *)createdAssetsWithImage:(UIImage *)image creationDate:(NSDate *)creationDate location:(CLLocation *)location
@@ -190,6 +192,7 @@
 {
     [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
     [LDGNetworkCache removeAllHttpCache];
+    [AXWebViewController clearWebCacheCompletion:nil];
     
 }
 
@@ -198,6 +201,7 @@
 {
     [[SDImageCache sharedImageCache] clearMemory];
     [LDGNetworkCache clearHTTPMemory];
+    [AXWebViewController clearWebCacheCompletion:nil];
     
 }
 

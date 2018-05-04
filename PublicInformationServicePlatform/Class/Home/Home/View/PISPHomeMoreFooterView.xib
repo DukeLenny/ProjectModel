@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PISPHomeMoreFooterView">
+            <connections>
+                <outlet property="moreButton" destination="3p5-0R-SJK" id="urb-qP-QwE"/>
+                <outlet property="view" destination="iN0-l3-epB" id="KYP-ZT-269"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="576" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l66-zx-Bol">
+                    <rect key="frame" x="0.0" y="0.0" width="576" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3p5-0R-SJK">
+                            <rect key="frame" x="203" y="13" width="170" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="170" id="GD7-3b-B9F"/>
+                                <constraint firstAttribute="height" constant="44" id="s6s-hp-TpN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="更多不可错过的景点" image="home_more_arrow_normal">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="moreButtonClicked:" destination="-1" eventType="touchUpInside" id="URa-dS-p6s"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bi6-Lo-gBh">
+                            <rect key="frame" x="10" y="69" width="556" height="1"/>
+                            <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="524-SR-8xQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="bi6-Lo-gBh" secondAttribute="bottom" id="6fc-K2-gXb"/>
+                        <constraint firstItem="3p5-0R-SJK" firstAttribute="centerY" secondItem="l66-zx-Bol" secondAttribute="centerY" id="JKr-ni-ZVD"/>
+                        <constraint firstItem="bi6-Lo-gBh" firstAttribute="leading" secondItem="l66-zx-Bol" secondAttribute="leading" constant="10" id="Pai-n2-M1F"/>
+                        <constraint firstItem="bi6-Lo-gBh" firstAttribute="top" secondItem="3p5-0R-SJK" secondAttribute="bottom" constant="12" id="gqE-7O-PE8"/>
+                        <constraint firstItem="3p5-0R-SJK" firstAttribute="centerX" secondItem="l66-zx-Bol" secondAttribute="centerX" id="jOn-kU-vQ1"/>
+                        <constraint firstAttribute="trailing" secondItem="bi6-Lo-gBh" secondAttribute="trailing" constant="10" id="nbj-2s-jql"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="l66-zx-Bol" secondAttribute="bottom" id="7ri-fu-kgI"/>
+                <constraint firstItem="l66-zx-Bol" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="V85-Gb-ARz"/>
+                <constraint firstAttribute="trailing" secondItem="l66-zx-Bol" secondAttribute="trailing" id="gx4-Za-RRS"/>
+                <constraint firstItem="l66-zx-Bol" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yJp-Ku-DH5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="28" y="-25"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_more_arrow_normal" width="6" height="12"/>
+    </resources>
+</document>

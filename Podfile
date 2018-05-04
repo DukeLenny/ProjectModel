@@ -8,11 +8,21 @@ def shared_pods
   
   pod 'SDWebImage'
   pod 'YYCache'
+  #pod 'AXWebViewController'
   
   pod 'MJExtension'
   pod 'MJRefresh'
   pod 'Masonry'
   pod 'SVProgressHUD'
+  
+  pod 'AXNavigationBackItemInjection'
+  pod 'NJKWebViewProgress'
+  pod 'Aspects'
+  pod 'AXPracticalHUD'
+  pod 'SDCycleScrollView'
+  pod 'IDMPhotoBrowser'
+  pod 'TZImagePickerController'
+  pod 'WechatOpenSDK'
    
 end
 

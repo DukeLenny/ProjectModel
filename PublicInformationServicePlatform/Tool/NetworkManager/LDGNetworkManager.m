@@ -177,6 +177,39 @@ static AFHTTPSessionManager *_manager;
     }];
 }
 
+#pragma mark - 上传文件
+
++ (NSURLSessionTask *)uploadFileWithURL:(NSString *)URL
+                         parameters:(NSDictionary *)parameters
+                             fileDatas:(NSArray<NSData *> *)fileDatas
+                               name:(NSString *)name
+                           fileName:(NSString *)fileName
+                           mimeType:(NSString *)mimeType
+                           progress:(HttpProgress)progress
+                            success:(HttpRequestSuccess)success
+                            failure:(HttpRequestFailed)failure
+{
+    
+    return [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id formData) {
+        [fileDatas enumerateObjectsUsingBlock:^(NSData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [formData appendPartWithFileData:obj name:name fileName:[NSString stringWithFormat:@"%@%lu.%@",fileName,(unsigned long)idx,mimeType] mimeType:mimeType];
+        }];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        //上传进度
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            progress ? progress(uploadProgress) : nil;
+        });
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        success ? success(responseObject) : nil;
+        MMLog(@"responseObject = %@",[self jsonToString:responseObject]);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        failure ? failure(error) : nil;
+        MMLog(@"error = %@",error);
+    }];
+}
+
 #pragma mark - 下载文件
 + (NSURLSessionTask *)downloadWithURL:(NSString *)URL
                               fileDir:(NSString *)fileDir

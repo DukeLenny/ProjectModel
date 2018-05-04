@@ -8,7 +8,7 @@
 
 #import "LDGRefreshTableViewController.h"
 
-#define PageSizeKey @"rows"
+#define PageSizeKey @"limitPage"
 #define PageKey @"page"
 #define NoDataImageName @"no_data"
 
@@ -56,7 +56,7 @@
     self.needPullDownRefreshing = YES;
     self.needPullUpRefreshing = YES;
     
-    self.refreshControlType = LDGRefreshControlTypeCustom;
+    self.refreshControlType = LDGRefreshControlTypeNormal;
     
     self.tableViewStyle = UITableViewStylePlain;
     
@@ -175,7 +175,7 @@
 
 - (void)requestData
 {
-    [DLNetworkManager postRequestWithInterfaceName:self.interfaceName parameters:self.parameters success:^(id responseObject) {
+    [DLNetworkManager getRequestWithInterfaceName:self.interfaceName parameters:self.parameters success:^(id responseObject) {
         
         [self disposeSuccess:responseObject];
         
@@ -208,10 +208,7 @@
 - (void)showPromptStatus
 {
     self.noDataView.hidden = self.models.count > 0;
-    if (self.models.count <= 0)
-    {
-        [SVProgressHUD showInfoWithStatus:HUD_NODATA_STATUS];
-    }
+    
     self.tableView.mj_footer.hidden = self.models.count <= 0 || !self.needPullUpRefreshing;
 }
 
@@ -230,17 +227,17 @@
 
 - (void)disposeSuccess:(id)responseObject
 {
-    NSString *state = [responseObject valueForKey:@"state"];
-    NSString *msg = [responseObject valueForKey:@"msg"];
-    if ([state isEqualToString:@"error"])
+    NSNumber *code = [responseObject valueForKey:@"code"];
+    NSString *message = [responseObject valueForKey:@"message"];
+    if (![code.description isEqualToString:@"0"])
     {
-        [self disposeError:[NSString isEmptyWithStr:msg] ? @"请求失败" : msg];
+        [self disposeError:[NSString isEmptyWithStr:message] ? @"请求失败" : message];
         return;
     }
     
-    NSNumber *total = [responseObject valueForKey:@"total"];
+    NSNumber *total = responseObject[@"page"][@"total"];
     
-    NSMutableArray *dataArray = [self.modelClass mj_objectArrayWithKeyValuesArray:responseObject[@"rows"]];
+    NSMutableArray *dataArray = [self.modelClass mj_objectArrayWithKeyValuesArray:responseObject[@"datas"]];
     
     if (dataArray.count > 0)
     {

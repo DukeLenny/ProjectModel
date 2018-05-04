@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PISPKnowYouCanSeeTableViewCell" rowHeight="127" id="KGk-i7-Jjw" customClass="PISPKnowYouCanSeeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="126.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUi-jZ-Y3K">
+                        <rect key="frame" x="16" y="0.0" width="366" height="110.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spot_photograph_icon_plants" translatesAutoresizingMaskIntoConstraints="NO" id="0BK-xK-rg9">
+                                <rect key="frame" x="290" y="25.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0BK-xK-rg9" secondAttribute="height" multiplier="1:1" id="g9Z-MT-5Fk"/>
+                                    <constraint firstAttribute="width" constant="60" id="ybm-Gw-Um0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="识花草" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwZ-fU-EMf">
+                                <rect key="frame" x="16" y="16" width="264" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="看点" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nci-Hx-zpP">
+                                <rect key="frame" x="16" y="52" width="264" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NwZ-fU-EMf" firstAttribute="leading" secondItem="CUi-jZ-Y3K" secondAttribute="leading" constant="16" id="4JR-cl-FVF"/>
+                            <constraint firstItem="Nci-Hx-zpP" firstAttribute="leading" secondItem="NwZ-fU-EMf" secondAttribute="leading" id="F27-cJ-r5B"/>
+                            <constraint firstItem="NwZ-fU-EMf" firstAttribute="top" secondItem="CUi-jZ-Y3K" secondAttribute="top" constant="16" id="VGC-Lq-r8Y"/>
+                            <constraint firstItem="0BK-xK-rg9" firstAttribute="leading" secondItem="Nci-Hx-zpP" secondAttribute="trailing" constant="10" id="ddT-EI-hFO"/>
+                            <constraint firstItem="0BK-xK-rg9" firstAttribute="leading" secondItem="NwZ-fU-EMf" secondAttribute="trailing" constant="10" id="fuR-RH-WvD"/>
+                            <constraint firstItem="Nci-Hx-zpP" firstAttribute="top" secondItem="NwZ-fU-EMf" secondAttribute="bottom" constant="12" id="fzI-8B-8xb"/>
+                            <constraint firstAttribute="trailing" secondItem="0BK-xK-rg9" secondAttribute="trailing" constant="16" id="hbD-hu-gog"/>
+                            <constraint firstAttribute="bottom" secondItem="0BK-xK-rg9" secondAttribute="bottom" constant="25" id="xHx-m6-xYW"/>
+                            <constraint firstItem="0BK-xK-rg9" firstAttribute="centerY" secondItem="CUi-jZ-Y3K" secondAttribute="centerY" id="yl7-34-fbm"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="CUi-jZ-Y3K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8t3-8u-K2r"/>
+                    <constraint firstAttribute="trailing" secondItem="CUi-jZ-Y3K" secondAttribute="trailing" constant="16" id="AC6-eP-p62"/>
+                    <constraint firstAttribute="bottom" secondItem="CUi-jZ-Y3K" secondAttribute="bottom" constant="16" id="Qlb-x2-Dsi"/>
+                    <constraint firstItem="CUi-jZ-Y3K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fAo-Bu-L2l"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="introLabel" destination="Nci-Hx-zpP" id="hMA-gm-uGg"/>
+                <outlet property="logoImageView" destination="0BK-xK-rg9" id="vxC-fi-HzZ"/>
+                <outlet property="titleLabel" destination="NwZ-fU-EMf" id="mCo-sy-KA5"/>
+                <outlet property="view" destination="CUi-jZ-Y3K" id="l2F-dV-TEU"/>
+            </connections>
+            <point key="canvasLocation" x="3" y="84.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="spot_photograph_icon_plants" width="60" height="60"/>
+    </resources>
+</document>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PISPHomeTitleHeaderView">
+            <connections>
+                <outlet property="checkAllButton" destination="x66-Ng-4Fc" id="9Wt-1H-hb5"/>
+                <outlet property="titleLabel" destination="Ek3-SO-N8q" id="FJO-oq-S47"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TGU-bF-LkK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="523" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxj-Yi-aSt">
+                    <rect key="frame" x="0.0" y="0.0" width="523" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="了解景区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek3-SO-N8q">
+                            <rect key="frame" x="10" y="18.5" width="82" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x66-Ng-4Fc">
+                            <rect key="frame" x="433" y="19" width="80" height="22"/>
+                            <state key="normal" title="查看全部" image="home_more_arrow_normal">
+                                <color key="titleColor" red="0.070588235294117646" green="0.63529411764705879" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="checkAllButtonClicked:" destination="-1" eventType="touchUpInside" id="e8U-Ph-Y0l"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="x66-Ng-4Fc" secondAttribute="trailing" constant="10" id="10q-FK-BZC"/>
+                        <constraint firstItem="Ek3-SO-N8q" firstAttribute="leading" secondItem="qxj-Yi-aSt" secondAttribute="leading" constant="10" id="DAR-Iv-UD1"/>
+                        <constraint firstItem="x66-Ng-4Fc" firstAttribute="centerY" secondItem="qxj-Yi-aSt" secondAttribute="centerY" id="JSd-6c-KY5"/>
+                        <constraint firstAttribute="bottom" secondItem="Ek3-SO-N8q" secondAttribute="bottom" constant="17.5" id="hso-cm-uaA"/>
+                        <constraint firstItem="Ek3-SO-N8q" firstAttribute="centerY" secondItem="qxj-Yi-aSt" secondAttribute="centerY" id="zjf-im-Bu2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qxj-Yi-aSt" secondAttribute="trailing" id="4TN-ws-QS3"/>
+                <constraint firstItem="qxj-Yi-aSt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EDh-mX-amM"/>
+                <constraint firstItem="qxj-Yi-aSt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WJF-Uu-d0B"/>
+                <constraint firstAttribute="bottom" secondItem="qxj-Yi-aSt" secondAttribute="bottom" id="dw9-sr-alx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-13.5" y="-22"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_more_arrow_normal" width="6" height="12"/>
+    </resources>
+</document>

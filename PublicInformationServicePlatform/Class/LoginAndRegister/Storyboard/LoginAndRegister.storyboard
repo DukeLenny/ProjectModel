@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R4d-4i-gtE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jwR-Cv-A1J">
+            <objects>
+                <navigationController id="R4d-4i-gtE" customClass="LDGNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VQF-nn-RPP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E97-jr-5br" kind="relationship" relationship="rootViewController" id="H2y-wc-Zow"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czj-a6-7qv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-954" y="81"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="HAI-em-TGP">
+            <objects>
+                <viewController id="E97-jr-5br" customClass="PISPLoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0px-F8-e6W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_wechatlogin_banner" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-4U-lEU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="65Y-4U-lEU" secondAttribute="height" multiplier="750:562" id="eax-Pp-bD9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_wechatlogin_banner_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PvN-Dd-6Gy">
+                                <rect key="frame" x="144" y="75.5" width="87" height="90"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personal_wechatlogin_wechatlogo" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-wf-gfP">
+                                <rect key="frame" x="137" y="231" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用微信账号授权登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zof-5H-kXd">
+                                <rect key="frame" x="95.5" y="351" width="183.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t54-lK-XVP">
+                                <rect key="frame" x="30" y="432" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.70196078431372544" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5FL-s0-uxd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="确认登录"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="E97-jr-5br" eventType="touchUpInside" id="UR5-4F-pGQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="65Y-4U-lEU" firstAttribute="leading" secondItem="0px-F8-e6W" secondAttribute="leading" id="8Tm-eF-NP2"/>
+                            <constraint firstItem="PvN-Dd-6Gy" firstAttribute="centerX" secondItem="0px-F8-e6W" secondAttribute="centerX" id="FIL-rg-VBU"/>
+                            <constraint firstItem="t54-lK-XVP" firstAttribute="centerX" secondItem="0px-F8-e6W" secondAttribute="centerX" id="I8i-U0-ubH"/>
+                            <constraint firstItem="zof-5H-kXd" firstAttribute="top" secondItem="XhB-wf-gfP" secondAttribute="bottom" constant="20" id="MVT-dr-L9m"/>
+                            <constraint firstItem="t54-lK-XVP" firstAttribute="top" secondItem="zof-5H-kXd" secondAttribute="bottom" constant="60" id="OYu-IT-YbW"/>
+                            <constraint firstItem="XhB-wf-gfP" firstAttribute="centerY" secondItem="65Y-4U-lEU" secondAttribute="bottom" id="R3K-iG-M8T"/>
+                            <constraint firstItem="65Y-4U-lEU" firstAttribute="top" secondItem="0px-F8-e6W" secondAttribute="top" id="Rgr-uB-TMs"/>
+                            <constraint firstItem="PvN-Dd-6Gy" firstAttribute="centerY" secondItem="65Y-4U-lEU" secondAttribute="centerY" constant="-20" id="d1r-uX-BuW"/>
+                            <constraint firstItem="XhB-wf-gfP" firstAttribute="centerX" secondItem="0px-F8-e6W" secondAttribute="centerX" id="nJL-Ze-wH4"/>
+                            <constraint firstItem="t54-lK-XVP" firstAttribute="leading" secondItem="0px-F8-e6W" secondAttribute="leading" constant="30" id="ock-OI-uqc"/>
+                            <constraint firstAttribute="trailing" secondItem="t54-lK-XVP" secondAttribute="trailing" constant="30" id="v7e-s2-zXY"/>
+                            <constraint firstAttribute="trailing" secondItem="65Y-4U-lEU" secondAttribute="trailing" id="yGJ-wt-fqm"/>
+                            <constraint firstItem="zof-5H-kXd" firstAttribute="centerX" secondItem="XhB-wf-gfP" secondAttribute="centerX" id="z7T-Xh-R18"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hAv-2J-qM5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MnI-ot-tDG"/>
+                    <connections>
+                        <outlet property="weChatLogoImageView" destination="XhB-wf-gfP" id="CSj-Yd-MgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4T-Fg-uht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-271.19999999999999" y="79.610194902548727"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="personal_wechatlogin_banner" width="375" height="281"/>
+        <image name="personal_wechatlogin_banner_logo" width="87" height="90"/>
+        <image name="personal_wechatlogin_wechatlogo" width="100" height="100"/>
+    </resources>
+</document>
