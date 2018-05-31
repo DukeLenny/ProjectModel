@@ -14,6 +14,7 @@ def shared_pods
   pod 'MJRefresh'
   pod 'Masonry'
   pod 'SVProgressHUD'
+  pod 'IQKeyboardManager'
   
   pod 'AXNavigationBackItemInjection'
   pod 'NJKWebViewProgress'

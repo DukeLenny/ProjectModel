@@ -11,7 +11,11 @@
 #endif
 
 #import "AXPracticalHUD.h"
+#import "AXPracticalHUDAnimator.h"
 #import "AXPracticalHUDContentView.h"
+#import "AXBarProgressView.h"
+#import "AXCircleProgressView.h"
+#import "AXGradientProgressView.h"
 
 FOUNDATION_EXPORT double AXPracticalHUDVersionNumber;
 FOUNDATION_EXPORT const unsigned char AXPracticalHUDVersionString[];
